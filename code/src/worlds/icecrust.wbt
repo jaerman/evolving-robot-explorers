@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.303687 0.942073 0.142382 5.35963
-  position -10.3887 3.12646 4.74603
+  orientation -0.788413 -0.573516 -0.222449 0.914377
+  position -5.34586 14.1875 17.0076
 }
 Background {
 }
@@ -39,7 +39,7 @@ DEF WATER Fluid {
         }
       }
       geometry Box {
-        size 12 0.8 8
+        size 12 0.8 10
       }
     }
   ]
@@ -140,7 +140,7 @@ DEF ICECRUST Solid {
   boundingObject USE ICE_BOX
 }
 DEF SALAMANDER Robot {
-  translation 3.39999 1.61422 0.74
+  translation 4.60998 1.63422 -1.61
   rotation 0 1 0 1.5708
   children [
     GPS {
