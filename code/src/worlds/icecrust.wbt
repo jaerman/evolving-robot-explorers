@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.131624 0.982935 0.128507 4.71916
-  position -11.3529 2.85073 0.267325
+  orientation 0.303687 0.942073 0.142382 5.35963
+  position -10.3887 3.12646 4.74603
 }
 Background {
 }
@@ -64,7 +64,7 @@ DEF ICECRUST Solid {
         }
         texture ImageTexture {
           url [
-            "/Users/Tanja/Desktop/Webots/Europa_Ice_Rafts.jpg"
+            "Europa_Ice_Rafts.jpg"
           ]
         }
       }
@@ -85,7 +85,7 @@ DEF ICECRUST Solid {
         }
         texture ImageTexture {
           url [
-            "/Users/Tanja/Desktop/Webots/Europa_Ice_Rafts.jpg"
+            "Europa_Ice_Rafts.jpg"
           ]
         }
       }
@@ -107,7 +107,7 @@ DEF ICECRUST Solid {
         }
         texture ImageTexture {
           url [
-            "/Users/Tanja/Desktop/Webots/Europa_Ice_Rafts.jpg"
+            "Europa_Ice_Rafts.jpg"
           ]
         }
       }
@@ -128,7 +128,7 @@ DEF ICECRUST Solid {
         }
         texture ImageTexture {
           url [
-            "/Users/Tanja/Desktop/Webots/Europa_Ice_Rafts.jpg"
+            "Europa_Ice_Rafts.jpg"
           ]
         }
       }
