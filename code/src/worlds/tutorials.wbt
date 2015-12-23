@@ -1,0 +1,45 @@
+#VRML_SIM V8.3.0 utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.722448 0.680351 0.123251 0.740347
+  position 0.872617 0.608175 1.21907
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.5 0.3
+}
+RectangleArena {
+}
+Supervisor {
+  controller "destroy_test"
+}
+E-puck {
+  controller "void"
+  camera_fieldOfView 0.7854
+  camera_width 1
+  camera_height 1
+}
+DEF SOLID Solid {
+  translation 0.2 0.1 0
+  children [
+    Shape {
+      geometry Sphere {
+        radius 0.05
+        subdivision 3
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.05
+    subdivision 3
+  }
+  physics Physics {
+  }
+}
