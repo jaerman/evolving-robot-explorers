@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.997662 0.0673484 0.0115707 5.94241
-  position -0.876556 3.58854 10.0212
+  orientation -0.908188 0.411033 0.0790412 0.417353
+  position 0.633801 2.46761 5.32473
 }
 Background {
 }
@@ -43,6 +43,7 @@ DEF WATER Fluid {
       }
     }
   ]
+  name "ocean"
   boundingObject USE WATER_BOX
   locked TRUE
 }
@@ -71,10 +72,115 @@ DEF ICECRUST Solid {
       }
     }
   ]
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "ocean"
+      referenceArea "xyz-projection"
+      dragForceCoefficients 3.1 1.3 0
+      viscousResistanceTorqueCoefficient 5
+    }
+  ]
   boundingObject USE ICE_BOX
   physics Physics {
     density 920
   }
+}
+DEF ICECRUST Solid {
+  translation -0.19 0 0
+  children [
+    DEF ICE_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+        }
+        texture ImageTexture {
+          url [
+            "Europa_Ice_Rafts.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "ocean"
+      referenceArea "xyz-projection"
+      dragForceCoefficients 3.1 1.3 0
+      viscousResistanceTorqueCoefficient 5
+    }
+  ]
+  boundingObject USE ICE_BOX
+  physics Physics {
+    density 920
+  }
+}
+DEF ICECRUST Solid {
+  translation 0.05 0.1 0
+  children [
+    DEF ICE_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+        }
+        texture ImageTexture {
+          url [
+            "Europa_Ice_Rafts.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "ocean"
+      referenceArea "xyz-projection"
+      dragForceCoefficients 3.1 1.3 0
+      viscousResistanceTorqueCoefficient 5
+    }
+  ]
+  boundingObject USE ICE_BOX
+  physics Physics {
+    density 920
+  }
+}
+DEF ICECRUST Solid {
+  translation -0.05 0.1 0
+  children [
+    DEF ICE_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+        }
+        texture ImageTexture {
+          url [
+            "Europa_Ice_Rafts.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "ocean"
+      referenceArea "xyz-projection"
+      dragForceCoefficients 3.1 1.3 0
+      viscousResistanceTorqueCoefficient 5
+    }
+  ]
+  boundingObject USE ICE_BOX
+  physics Physics {
+    density 920
+  }
+  rotationStep 0.261799
 }
 DEF SALAMANDER Robot {
   translation 4.60998 1.63422 -1.61
@@ -1635,4 +1741,36 @@ DEF MODULE_8 Robot {
   boundingObject USE BODY_GROUP
   physics USE BODY_PHYSICS
   controller "yamor"
+}
+DEF ICECRUST Solid {
+  translation -0.1 0 0
+  children [
+    DEF ICE_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+        }
+        texture ImageTexture {
+          url [
+            "Europa_Ice_Rafts.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "ocean"
+      referenceArea "xyz-projection"
+      dragForceCoefficients 3.1 1.3 0
+      viscousResistanceTorqueCoefficient 5
+    }
+  ]
+  boundingObject USE ICE_BOX
+  physics Physics {
+    density 920
+  }
 }
