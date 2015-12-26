@@ -52,7 +52,7 @@ int main(int argc, char **argv)
      * Enter here functions to send actuator commands, like:
      * wb_differential_wheels_set_speed(100.0,100.0);
      */
-     wb_differential_wheels_set_speed(100.0,100.0);
+     wb_differential_wheels_set_speed(500.0,500.0);
   };
   
   /* Enter your cleanup code here */

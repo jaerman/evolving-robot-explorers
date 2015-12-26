@@ -3,8 +3,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.722448 0.680351 0.123251 0.740347
-  position 0.872617 0.608175 1.21907
+  orientation -0.841639 0.52398 0.130724 0.824107
+  position 0.730181 0.815998 1.08934
 }
 Background {
   skyColor [
@@ -20,8 +20,10 @@ RectangleArena {
 Supervisor {
   controller "destroy_test"
 }
-E-puck {
-  controller "void"
+DEF MY_ROBOT E-puck {
+  translation 0.01 0 -0.41
+  rotation 0 1 0 3.1416
+  controller "epuck_go_forward"
   camera_fieldOfView 0.7854
   camera_width 1
   camera_height 1
