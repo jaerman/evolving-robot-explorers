@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.264423 -0.946129 -0.186872 5.00007
-  position 0.28378 0.733112 0.9061
+  orientation -0.0240212 -0.988485 -0.1494 2.82634
+  position -0.695743 0.62017 -0.959603
 }
 Background {
 }
@@ -53,6 +53,9 @@ Floor {
   texture [
     "textures/water.jpg"
   ]
+}
+Supervisor {
+  controller "destroy_test"
 }
 DEF ICECRUST Solid {
   children [
@@ -839,7 +842,7 @@ DEF ICECRUST Solid {
   ]
   boundingObject USE ICE_BOX
 }
-DEF ICECRUST Solid {
+DEF SOLID Solid {
   translation -0.3 0 0.2
   children [
     DEF ICE_BOX Shape {
@@ -859,6 +862,15 @@ DEF ICECRUST Solid {
     }
   ]
   boundingObject USE ICE_BOX
+}
+DEF MY_ROBOT Khepera3 {
+  hidden translation_1 -0.04578 0.0245041 7.72734e-10
+  hidden rotation_1 1 7.95027e-08 0.000224035 1.93009e-08
+  hidden translation_2 0.04578 0.0245041 7.71876e-10
+  hidden rotation_2 1 7.94638e-08 0.000224051 1.93031e-08
+  translation -0.02 0.0464827 0.0800041
+  rotation 1 5.6734e-07 -9.61158e-05 -0.00109933
+  controller "void"
 }
 DEF ICECRUST Solid {
   translation -0.2 0 0.2
