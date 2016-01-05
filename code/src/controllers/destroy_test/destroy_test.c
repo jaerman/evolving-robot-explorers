@@ -1,8 +1,10 @@
 /*
- * Description:
- Example showing how to use wb_supervisor_node_get_from_def
- to remove a node
- frame
+TODO: Change the code in that way that if the robot found a local minima
+the supervisor will start removing nodes under the robot
+
+Nodes to be removed should be smaller than the robot (robot is drilling)
+After drilling is done: release some robot which searches for life
+in the water
  */
 #include <webots/supervisor.h>
 #include <webots/robot.h>
