@@ -1,0 +1,84 @@
+#VRML_SIM V8.3.2 utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "leg"
+      material2 "floor"
+      coulombFriction [
+        5
+      ]
+    }
+    ContactProperties {
+      material1 "body"
+      material2 "floor"
+      coulombFriction [
+        0.2
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.015576 0.999791 0.0132315 2.96934
+  position 0.993249 1.85427 -12.0659
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.33 -1 -0.5
+  castShadows TRUE
+}
+TexturedBackground {
+  texture "starfield"
+}
+DEF WATER Fluid {
+  translation 0 -0.46 0
+  children [
+    DEF WATER_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+          transparency 0.7
+        }
+      }
+      geometry Box {
+        size 12 0.8 8
+      }
+    }
+  ]
+  name "ocean"
+  boundingObject USE WATER_BOX
+  locked TRUE
+}
+Floor {
+  translation 0 -0.05 0
+  size 12 8
+  texture [
+    "textures/water.jpg"
+  ]
+}
+Supervisor {
+}
+Pioneer3at {
+  translation -4.4 0.1 -1.16758e-05
+  rotation 0 1 0 4.71239
+  controller "driveForward"
+}
+DEF Ground Solid {
+  children [
+    DEF ICE_BOX Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.498039 1
+        }
+        texture ImageTexture {
+          url [
+            "Europa_Ice_Rafts.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 12 0.01 8
+      }
+    }
+  ]
+  boundingObject USE ICE_BOX
+}
