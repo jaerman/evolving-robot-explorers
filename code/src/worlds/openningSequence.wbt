@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.015576 0.999791 0.0132315 2.96934
-  position 0.993249 1.85427 -12.0659
+  orientation 0.0214587 0.998754 0.0450449 3.34789
+  position -7.12091 4.50481 -14.4949
 }
 DirectionalLight {
   ambientIntensity 1
@@ -58,7 +58,7 @@ Floor {
 Supervisor {
 }
 Pioneer3at {
-  translation -4.4 0.1 -1.16758e-05
+  translation -7.77 2.97 -8.2397e-06
   rotation 0 1 0 4.71239
   controller "driveForward"
 }
@@ -76,7 +76,7 @@ DEF Ground Solid {
         }
       }
       geometry Box {
-        size 12 0.01 8
+        size 35 4 23
       }
     }
   ]
