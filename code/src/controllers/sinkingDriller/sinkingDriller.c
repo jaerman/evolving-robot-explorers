@@ -17,9 +17,17 @@ int main(int argc, char **argv)
 	WbFieldRef size_field = wb_supervisor_node_get_field(shrinkBlock, "size");
 	
 	//Driller resizing Init stuff
-	WbNodeRef drillerNode;
-	drillerNode = wb_supervisor_node_get_from_def("drillerGeometry");
-	WbFieldRef height_field = wb_supervisor_node_get_field(drillerNode, "height");
+	//double heightValue = 0;
+	//WbNodeRef drillerNode;
+	//drillerNode = wb_supervisor_node_get_from_def("drillerGeometry");
+	//WbFieldRef height_field = wb_supervisor_node_get_field(drillerNode, "height");
+	
+	//Driller sinking stuff
+	WbNodeRef drillerTransNode;
+	drillerTransNode = wb_supervisor_node_get_from_def("Driller");
+	WbFieldRef trans_field = wb_supervisor_node_get_field(drillerTransNode, "translation");
+	
+	int testcounter = 0;
 	
 	//Wait the time the robot needs to arrive at the spot
 	int count = 0;
@@ -38,14 +46,26 @@ int main(int argc, char **argv)
 			break;
 		}
 		//for resizing the driller
-		double height = wb_supervisor_field_get_sf_float(height_field);
-		double heightValue;
-		if(height < 0.2){
-			heightValue = height+0.01;
-		}			
+		//double height = wb_supervisor_field_get_sf_float(height_field);
+		
+		//if(height < 0.2){
+		//	heightValue = height+0.01;
+		//}
+		//for sinking the driller if the block is sinking
+		const double *trans = wb_supervisor_field_get_sf_vec3f(trans_field);
+		if(testcounter > 30){
+			double ytranslation = trans[1]-0.005;
+			double transArray[3] = {trans[0],ytranslation,trans[2]};
+			wb_supervisor_field_set_sf_vec3f(trans_field,transArray);
+		}
+
+		
 		//setting the values for driller and block
 		wb_supervisor_field_set_sf_vec3f(size_field,sizeArray);
-		wb_supervisor_field_set_sf_float(height_field,heightValue);
+		//wb_supervisor_field_set_sf_float(height_field,heightValue);
+		
+		
+		testcounter = testcounter+1;
 		
 		wb_robot_step(32);
     }    

@@ -18,8 +18,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.0534413 0.996628 0.062262 1.60654
-  position 9.55389 1.89512 -0.239551
+  orientation -0.242588 0.94171 0.233094 1.64447
+  position 8.78206 4.69293 -0.0997026
 }
 DirectionalLight {
   ambientIntensity 1
@@ -56,12 +56,30 @@ Floor {
   ]
 }
 Supervisor {
-  controller "shrinking"
+  controller "sinkingDriller"
 }
 Pioneer3at {
   translation 4.48343e-08 1.23892 1.68021
   rotation -1 -1.74605e-07 0.000219649 0.000790555
-  controller "pioneer3at_obstacle_avoidance_with_lidar"
+  controller "forwardShrinking"
+}
+DEF Driller Solid {
+  translation 0 1.015 0
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "textures/steel_floor.jpg"
+          ]
+        }
+      }
+      geometry DEF drillerGeometry Cylinder {
+        height 0.2
+        radius 0.13
+      }
+    }
+  ]
 }
 DEF Test-1-1-1 Solid {
   translation 0 0 -3
